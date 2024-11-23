@@ -76,12 +76,24 @@
         </a>
         <ul class="menu-sub" *ngIf="isMenuOpen('Dashboard')">
           <li class="menu-item" routerLinkActive="active">
-            <a class="menu-link">
-              <div data-i18n="data.serviceName">Add Orders</div>
+            <a class="menu-link active">
+              <div
+                data-i18n="data.serviceName"
+                class="d-flex align-items-center gap-2"
+              >
+                <mat-icon>add</mat-icon>
+                Add Orders
+              </div>
             </a>
 
             <a class="menu-link">
-              <div data-i18n="data.serviceName">All Orders</div>
+              <div
+                data-i18n="data.serviceName"
+                class="d-flex align-items-center gap-2"
+              >
+                <mat-icon>list</mat-icon>
+                All Orders
+              </div>
             </a>
           </li>
         </ul>

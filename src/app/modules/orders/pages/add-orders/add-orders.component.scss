@@ -1,3 +1,33 @@
 .mat-mdc-form-field {
     margin-top: 16px;
   }
+  .upload-container {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .file-input-label {
+    background-color: #f5f8fa;
+    color: #000;
+    padding: 8px 16px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;  
+    border: 1px solid #ccc;
+  }
+  
+  .file-name-input {
+    border: 1px solid #ccc;
+    border-left: 0px;
+    padding: 8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left; 
+  }
+  
+  .file-name-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  

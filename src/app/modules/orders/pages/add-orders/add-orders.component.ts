@@ -16,6 +16,19 @@ export class AddOrdersComponent {
   });
 
   constructor(private _formBuilder: FormBuilder) {
-    alert('hii');
+    // alert('hii');
+  }
+
+  fileName: string = ''; // Store selected file name
+
+  // Handle file selection
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+
+    if (input.files && input.files[0]) {
+      this.fileName = input.files[0].name; // Set the file name
+    } else {
+      this.fileName = ''; // Reset if no file is selected
+    }
   }
 }

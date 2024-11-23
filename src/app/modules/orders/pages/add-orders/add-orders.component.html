@@ -1,48 +1,307 @@
-<mat-stepper #stepper>
-  <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input
-          matInput
-          placeholder="Last name, First name"
-          formControlName="firstCtrl"
-          required
-        />
-      </mat-form-field>
-      <div>
-        <p>Go to a different step to see the error state</p>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input
-          matInput
-          placeholder="Ex. 1 Main St, New York, NY"
-          formControlName="secondCtrl"
-          required
-        />
-      </mat-form-field>
-      <div>
-        <p>Go to a different step to see the error state</p>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-stepper>
-jvjvjhjjhvhvvhvjvjgvkgjvljvgjvkhvgvjgvgvhgghghghgh
+<div class="rightbar-body">
+  <div class="card stepper-block">
+    <mat-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Destination Details</ng-template>
+          <div class="mb-md-5 mb-3">
+            <h3 class="mb-1">Destination Details</h3>
+            <h5 class="mb-1">Enter Your Destination Details.</h5>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-label>Destination</mat-label>
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Destination</mat-label>
+                <input matInput placeholder="Search Destination Name" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-label>Is Transshipment</mat-label>
+              <div class="d-flex gap-2">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <!-- <mat-label>Search Transshipment Name</mat-label> -->
+                  <input matInput placeholder="Search Transshipment Name" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-primary text-white"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step
+        [stepControl]="secondFormGroup"
+        errorMessage="Address is required."
+      >
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Package Details</ng-template>
+          <div class="mb-md-5 mb-3">
+            <h3 class="mb-1">Package Details</h3>
+            <h5 class="mb-1">Enter Your Package Details.</h5>
+          </div>
+
+          <div class="card p-3 mb-5">
+            <div
+              class="d-flex justify-content-between pb-1 mb-md-5 mb-3 border-bottom"
+            >
+              <h3 class="mb-1">Package Details 1</h3>
+              <mat-icon color="primary">add_circle</mat-icon>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>Length(cm)</mat-label>
+                  <input matInput placeholder="Enter Length(cm)" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>Width(cm)</mat-label>
+                  <input matInput placeholder="Enter Width(cm)" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>Height(cm)</mat-label>
+                  <input matInput placeholder="Enter Height(cm)" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>No. of Pieces</mat-label>
+                  <input matInput placeholder="Enter No. of Pieces" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>Weight(Kg)</mat-label>
+                  <input matInput placeholder="Enter Weight(Kg)" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field appearance="outline" class="w-100 mt-1">
+                  <mat-label>Goods Value</mat-label>
+                  <input matInput placeholder="Enter Goods Value" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button mat-button matStepperPrevious>Back</button>
+            <button
+              mat-button
+              matStepperNext
+              class="btn btn-primary text-white"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Customer Details</ng-template>
+
+        <div class="mb-md-5 mb-3">
+          <h3 class="mb-1">Customer Details</h3>
+          <h5 class="mb-1">Enter Customer Details.</h5>
+        </div>
+
+        <div class="card p-3 mb-5">
+          <div class="pb-1 mb-md-5 mb-3 border-bottom">
+            <h3 class="m-0">Consignor Details</h3>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter Name" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Enter Mobile Number" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Enter Address" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>GST No</mat-label>
+                <input matInput placeholder="Enter GST No" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Enter Email Id" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="card p-3 mb-5">
+          <div class="pb-1 mb-md-5 mb-3 border-bottom">
+            <h3 class="m-0">Consignee Details</h3>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter Name" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Enter Mobile Number" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Enter Address" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>GST No</mat-label>
+                <input matInput placeholder="Enter GST No" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="w-100 mt-1">
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Enter Email Id" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext class="btn btn-primary text-white">
+            Next
+          </button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Parcel Proof</ng-template>
+        <div class="mb-md-5 mb-3">
+          <h3 class="mb-1">Parcel-Proof</h3>
+          <h5 class="mb-1">Enter Parcel-Proof.</h5>
+        </div>
+
+        <div class="card p-3 mb-5">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <mat-label>Upload Parcel Image</mat-label>
+              <div class="upload-container">
+                <label for="fileInput" class="file-input-label">
+                  Choose file
+                </label>
+                <input
+                  type="file"
+                  id="fileInput"
+                  (change)="onFileSelected($event)"
+                  hidden
+                  accept="image/*"
+                />
+                <input
+                  type="text"
+                  [value]="fileName"
+                  placeholder="No file chosen"
+                  readonly
+                  class="file-name-input"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <mat-label>Upload Parcel Image</mat-label>
+              <div class="upload-container">
+                <label for="fileInput" class="file-input-label">
+                  Choose file
+                </label>
+                <input
+                  type="file"
+                  id="fileInput"
+                  (change)="onFileSelected($event)"
+                  hidden
+                  accept="image/*"
+                />
+                <input
+                  type="text"
+                  [value]="fileName"
+                  placeholder="No file chosen"
+                  readonly
+                  class="file-name-input"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <mat-label>Upload Parcel Image</mat-label>
+              <div class="upload-container">
+                <label for="fileInput" class="file-input-label">
+                  Choose file
+                </label>
+                <input
+                  type="file"
+                  id="fileInput"
+                  (change)="onFileSelected($event)"
+                  hidden
+                  accept="image/*"
+                />
+                <input
+                  type="text"
+                  [value]="fileName"
+                  placeholder="No file chosen"
+                  readonly
+                  class="file-name-input"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <mat-label>Upload Parcel Image</mat-label>
+              <div class="upload-container">
+                <label for="fileInput" class="file-input-label">
+                  Choose file
+                </label>
+                <input
+                  type="file"
+                  id="fileInput"
+                  (change)="onFileSelected($event)"
+                  hidden
+                  accept="image/*"
+                />
+                <input
+                  type="text"
+                  [value]="fileName"
+                  placeholder="No file chosen"
+                  readonly
+                  class="file-name-input"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>
