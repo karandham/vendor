@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'all-orders', // Redirect to 'all-orders' without repeating 'orders'
+        redirectTo: 'add-orders', // Redirect to 'all-orders' without repeating 'orders'
         pathMatch: 'full',
       },
       {
