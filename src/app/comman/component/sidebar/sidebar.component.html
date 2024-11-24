@@ -78,6 +78,7 @@
           <li class="menu-item" routerLinkActive="active">
             <a class="menu-link active">
               <div
+                (click)="getdata('orders/add-orders')"
                 data-i18n="data.serviceName"
                 class="d-flex align-items-center gap-2"
               >
@@ -88,7 +89,7 @@
 
             <a class="menu-link">
               <div
-                data-i18n="data.serviceName"
+                (click)="getdata('orders/all-orders')"
                 class="d-flex align-items-center gap-2"
               >
                 <mat-icon>list</mat-icon>

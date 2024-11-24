@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  constructor(private router: Router) {}
   activeMenu!: string | null;
   toggleMenu(menuKey: string) {
     if (this.activeMenu == menuKey) {
@@ -22,5 +24,9 @@ export class SidebarComponent {
 
   isMenuOpen(menuKey: string): boolean {
     return this.activeMenu == menuKey;
+  }
+
+  getdata(data: string) {
+    this.router.navigate([data]);
   }
 }
