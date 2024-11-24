@@ -66,6 +66,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
                     font-weight: 500;
                 }
             }
+            &:hover:not([aria-disabled]), &:hover[aria-disabled=false], &.cdk-focused {
+                background: transparent !important;
+                &.mat-ripple {
+                background: transparent !important;
+                }
+            }
         }
         .mat-stepper-horizontal-line {   
             border-top: none !important;
