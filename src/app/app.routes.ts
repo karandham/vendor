@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'orders', // Redirect the empty path to 'orders'
+    redirectTo: 'auth', // Redirect the empty path to 'orders'
     pathMatch: 'full',
   },
   {
