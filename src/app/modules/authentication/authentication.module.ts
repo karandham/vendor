@@ -9,15 +9,24 @@ import { SidebarComponent } from '../../comman/component/sidebar/sidebar.compone
 import { HeaderComponent } from '../../comman/component/header/header.component';
 import { FooterComponent } from '../../comman/component/footer/footer.component';
 
-
 @NgModule({
-  declarations: [LoginComponent,AuthenticationComponent,ForgotPasswordComponent],
+  declarations: [
+    LoginComponent,
+    AuthenticationComponent,
+    ForgotPasswordComponent,
+  ],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
-  ]
+    FooterComponent,
+  ],
 })
-export class AuthenticationModule { }
+export class AuthenticationModule {
+  isSignUpMode = false;
+
+  toggleMode(): void {
+    this.isSignUpMode = !this.isSignUpMode;
+  }
+}

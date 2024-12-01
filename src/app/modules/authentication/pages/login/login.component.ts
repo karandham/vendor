@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
-  standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  isSignUpMode: boolean = false;
 
-  constructor(){
+  toggleMode(isSignUp: boolean): void {
+    this.isSignUpMode = isSignUp;
   }
 }
